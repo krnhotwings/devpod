@@ -6,7 +6,7 @@ import * as dialog from "@tauri-apps/plugin-dialog"
 
 export function useDownloadLogs() {
   const toast = useToast()
-  const { mutate, isLoading: isDownloading } = useMutation({
+  const { mutate, isPending: isDownloading } = useMutation({
     mutationFn: async ({ actionID }: { actionID: TActionID }) => {
       const actionLogFile = (await client.workspaces.getActionLogFile(actionID)).unwrap()
 

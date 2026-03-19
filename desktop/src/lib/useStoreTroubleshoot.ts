@@ -8,7 +8,7 @@ import JSZip from "jszip"
 
 export function useStoreTroubleshoot() {
   const toast = useToast()
-  const { mutate, isLoading: isStoring } = useMutation({
+  const { mutate, isPending: isStoring } = useMutation({
     mutationFn: async ({
       workspace,
       workspaceActions,
